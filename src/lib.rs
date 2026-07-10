@@ -165,19 +165,6 @@ impl zed::Extension for FsharpExtension {
 
         Ok(Some(options))
     }
-}
-
-/// Recursively overlay `overlay` onto `base`; objects merge per key,
-/// everything else is replaced by the overlay value.
-fn merge(base: &mut Value, overlay: Value) {
-    match (base, overlay) {
-        (Value::Object(base_map), Value::Object(overlay_map)) => {
-            for (key, value) in overlay_map {
-                merge(base_map.entry(key).or_insert(Value::Null), value);
-            }
-        }
-        (base_slot, overlay) => *base_slot = overlay,
-    }
 
     fn get_dap_binary(
         &mut self,
@@ -229,6 +216,19 @@ fn merge(base: &mut Value, overlay: Value) {
             return Err(format!("Unknown debug locator: {locator_name}"));
         }
         dotnet_locator::run_locator(build_task)
+    }
+}
+
+/// Recursively overlay `overlay` onto `base`; objects merge per key,
+/// everything else is replaced by the overlay value.
+fn merge(base: &mut Value, overlay: Value) {
+    match (base, overlay) {
+        (Value::Object(base_map), Value::Object(overlay_map)) => {
+            for (key, value) in overlay_map {
+                merge(base_map.entry(key).or_insert(Value::Null), value);
+            }
+        }
+        (base_slot, overlay) => *base_slot = overlay,
     }
 }
 
