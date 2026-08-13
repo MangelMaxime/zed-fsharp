@@ -22,7 +22,7 @@ language = "FSharp"
 
 [grammars.fsharp]
 repository = "https://github.com/MangelMaxime/tree-sitter-fsharp"
-commit = "f22998f70b5b4e2e5af7ca8f7863644b75d72f0b"
+commit = "9a25666413c1791877fbc53c80935f63f2fec204"
 
 # `*` matches a single argument; `**` allows any trailing arguments.
 # The locator needs multi-argument invocations like `dotnet msbuild <project> -getProperty:TargetPath`.
