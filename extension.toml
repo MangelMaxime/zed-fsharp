@@ -12,11 +12,16 @@ fsac_custom_arguments = { type = "array", items = "string", default = [], descri
 
 [language_servers.fsautocomplete]
 name = "fsautocomplete"
-language = "FSharp"
+languages = ["FSharp", "F# Signature"]
 
 [grammars.fsharp]
 repository = "https://github.com/MangelMaxime/tree-sitter-fsharp"
-commit = "dd0f511f2a5e33daa27c4a0f72e288c78f587f14"
+commit = "bb60bc5a6d87862ff3ce80d55c99a49d96b3fed3"
+
+[grammars.fsharp_signature]
+repository = "https://github.com/MangelMaxime/tree-sitter-fsharp"
+commit = "bb60bc5a6d87862ff3ce80d55c99a49d96b3fed3"
+path = "signature"
 
 [[capabilities]]
 kind = "process:exec"
