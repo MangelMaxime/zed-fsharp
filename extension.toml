@@ -16,11 +16,11 @@ languages = ["FSharp", "F# Signature"]
 
 [grammars.fsharp]
 repository = "https://github.com/MangelMaxime/tree-sitter-fsharp"
-commit = "bb60bc5a6d87862ff3ce80d55c99a49d96b3fed3"
+commit = "913bc9e78c6cb66642f49c794579aecd9a36868c"
 
 [grammars.fsharp_signature]
 repository = "https://github.com/MangelMaxime/tree-sitter-fsharp"
-commit = "bb60bc5a6d87862ff3ce80d55c99a49d96b3fed3"
+commit = "913bc9e78c6cb66642f49c794579aecd9a36868c"
 path = "signature"
 
 [[capabilities]]
